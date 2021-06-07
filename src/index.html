@@ -2,13 +2,80 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
+    <title>Fast Card</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header class="header" style="display: none">
+         <img src="../images/logo-horizontal.svg" alt="">
+    </header>
+    <main>
+        <!--PANTALLA DE INICIO-->
+        <div class="home-container">
+          <div class="home-content">
+              <img src="../images/logo-vertical.svg" alt="logotipo de fast card">
+              <p>El mejor sistema online para validar  <br>tarjetas de crédito.</p>
+              <button id="startbtn">Iniciar</button>
+          </div>
+      </div>
+
+      <!--PANTALLA DE INFORMACIÓN-->
+      <div class="info-container" style="display: none">
+          <div class="info-content">
+              <img src="../images/logo-vertical.svg" alt="logotipo de fast card">
+              <p>Puedes conocer más sobre nuestro sistema<br>haciendo click en "información".</p>
+              <button class="grey-btn" id="infobtn">Información</button><br>
+              <button class="blue-btn" id="validbtn">Ir a validar</button>
+          </div>
+          <div class="info-bg"></div>
+      </div>
+
+       <!--PANTALLA PARA MOSTRAR INFORMACIÓN-->
+       <div class="show-info-container"  id="show-info-container" style="display: none">
+         <div class="show-info-contents">
+           <div class="show-info-content">
+             <h2>Funcionamiento del sistema</h2>
+             <h3>Verificación del algoritmo de Luhn</h3>
+             <p> Verificaremos su número con el Algoritmo de Luhn para ver si es un número de tarjeta de crédito válido.</p>
+             <img src="../images/thinking.svg" alt="">
+           </div>
+           <div class="show-info-content">
+              <h2>Seguridad</h2>
+              <h3>¿Existe algún riesgo al usar la herramienta de validación de tarjetas de crédito en línea?</h3>
+              <p>No hay riesgo y este servicio es seguro de usar, seguro. El único riesgo es que alguien esté literalmente mirando la pantalla mientras usa la herramienta.<br><br>
+              No podemos acceder ni accederemos a la información que inserte en el sitio web, incluido el número de su tarjeta de crédito. Todos los cálculos se realizan en su navegador para que su número de tarjeta de crédito permanezca seguro con usted.</p>
+              <button id="validbutton">Ir a validar</button> <!--CHEQUEAR-->
+           </div>
+         </div>
+       </div>
+
+        <!--PANTALLA PARA CARD VALIDATION-->
+       <div class="card-valid-container" style="display: none">
+         <div class="card-valid-contents">
+           <div class="card-valid-content">
+             <img src="../images/card.svg" alt="ilustración de tarjeta de crédito">
+           </div>
+           <div class="card-valid-content">
+             <p>Coloca el número de tu tarjeta en la casilla:</p>
+             <input type="text" name="" id="inputCard" placeholder="número de tarjeta" pattern="^[0-9]+" maxlength="13" required><br><br> <!--pattern="\d{1,13}"-->
+             <button id="cardbtn">Validar</button>
+          </div>
+         </div>
+       </div>
+
+    </main>
+    <footer class="footer" style="display: none"> 
+      <ul>
+        <li>© Fast Card 2021</li>
+        <li>Terms</li>
+        <li>Privacy</li>
+        <li>Security</li>
+        <li>Status</li>
+      </ul>
+    </footer>
     <script src="index.js" type="module"></script>
+    <script src="validator.js" type="module"></script> 
   </body>
 </html>
