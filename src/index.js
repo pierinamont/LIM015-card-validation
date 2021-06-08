@@ -118,17 +118,38 @@ function getNumber() {
     } 
     
     //(3) Implementar la multiplicación solo a los números pares 
-    //.match(/\d+/g)
-    let newArray = reverseInput.map(even => {
-        if(even % 2 == 0) {
-            return (even*2);
+    let newArray = reverseInput.map(num => {
+        if(num % 2 == 0) {
+            let double = (num*2);
+            const m = double.toString().split('').reduce(function(a, b) { 
+                if(double >= 10){ 
+                    return a + parseInt(b)
+                } else {
+                    return double;
+                }
+            }, 0);
+            return m;
         } else {
-            return even;
+            return num;
         }
-        
     });
+    
     console.log(newArray);
     
+    
+    //(4) Si el resultado de la * es >= 10, sumar digitos 
+    /*
+    console.log(double.toString().split('').reduce(function(a, b) { 
+        return a + parseInt(b) 
+    }, 0));
+    /*
+    function sumDigits (even) {
+        let transform = even.split('');
+        let sum = transform.reduce(function (acc, even) {
+
+        });
+    }
+    */
 }
 
    /**
