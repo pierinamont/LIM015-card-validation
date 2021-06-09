@@ -1,7 +1,7 @@
 import validator from './validator.js';
 //console.log(validator); 
 
-/**Función de botón para iniciar */
+//Función de botón para iniciar 
 document.getElementById('startbtn').addEventListener('click', start);
 function start() {
     const startContent = document.getElementsByClassName('home-container');
@@ -16,7 +16,7 @@ function start() {
     }
 }
 
-/**Función de botón de información */
+//Función de botón de información 
 document.getElementById('infobtn').addEventListener('click', showInfo);
 function showInfo() {
     const showInfoContent = document.getElementsByClassName('show-info-container');
@@ -38,7 +38,8 @@ function showInfo() {
     }
 }
 
-/**Función de botón para is a validar tarjeta */
+
+//Función de botón para ir a validar tarjeta 
 document.getElementById('validbtn').addEventListener('click', showCard);
 function showCard() {
     const infoContainer = document.getElementsByClassName('info-container');
@@ -60,7 +61,7 @@ function showCard() {
     }
 }
 
-/**Función de botón para ir a validar tarjeta */
+//Función de botón para ir a validar tarjeta
 document.getElementById('validbutton').addEventListener('click', displayCard);
 function displayCard() {
     const showInfoContainer = document.getElementsByClassName('show-info-container');
@@ -82,17 +83,11 @@ function displayCard() {
     }
 }
 
-// PERMITIR SOLO NÚMEROS EN EL INPUT 
+// Permitir colocar solo números en el input text
 document.getElementById('inputCard').addEventListener('keypress', convert);
 
 function convert(e) { 
-   
-    if(!justNumbers(e)) {
-        e.preventDefault();
-    }
-
     function justNumbers(e) {
-        
         let key = e.keyCode || e.which;
         
         if(key >= 48 && key <= 57) {
@@ -102,8 +97,14 @@ function convert(e) {
             return false;
         }
     }
+
+    if(!justNumbers(e)) {
+        e.preventDefault();
+    }
+
 }
 
+//Fórmula de Luhn 
 document.getElementById('cardbtn').addEventListener('click', getNumber);
 function getNumber() {
     //(1) Obtener input y colocarlo en reversa
@@ -116,9 +117,35 @@ function getNumber() {
     if(inputCard.length === 0) {
         alert('No puedes dejar este campo vacío');
     } 
+
+    //(3) Las posiciones pares se multiplican * 2
+    let newArray = reverseInput.map(Number);
+    newArray = newArray.map((num, i) => {
+        if (i % 2 === 1) {
+            return num*2;
+        } else {
+            return num;
+        }
+    });
     
-    //(3) Implementar la multiplicación solo a los números pares 
-    let newArray = reverseInput.map(num => {
+    //(4) Sumar el resultado si es mayor o igual a 10
+    newArray = newArray.map((num) => {
+    if(num >= 10) {
+        return num -= 9;
+        } else {
+            return num;
+        }
+    });
+
+    validator.isValid(newArray);
+}
+
+
+/*
+
+*/
+
+  /**let newArray = reverseInput.map(num => {
         if(num % 2 == 0) {
             let double = (num*2);
             const m = double.toString().split('').reduce(function(a, b) { 
@@ -132,31 +159,6 @@ function getNumber() {
         } else {
             return num;
         }
-    });
-    
-    console.log(newArray);
-    
-    
-    //(4) Si el resultado de la * es >= 10, sumar digitos 
-    /*
-    console.log(double.toString().split('').reduce(function(a, b) { 
-        return a + parseInt(b) 
-    }, 0));
-    /*
-    function sumDigits (even) {
-        let transform = even.split('');
-        let sum = transform.reduce(function (acc, even) {
+    }); 
 
-        });
-    }
-    */
-}
-
-   /**
-     var numbers = [1, 5, 10, 15];
-    var doubles = numbers.map(function(x) {
-    return x * 2;
-    });
-    // doubles is now [2, 10, 20, 30]
-    // numbers is still [1, 5, 10, 15]
-    */
+console.log(newArray);*/
