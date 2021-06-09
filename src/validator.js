@@ -4,6 +4,15 @@
 
 const validator = {
     isValid: function(creditCardNumber) {
+     /* if(creditCardNumber % 10 === 0) {
+       return true;
+      } else {
+        return false;
+      }*/
+      console.log(creditCardNumber);
+    },
+
+    maskify: function(creditCardNumber) {
       console.log(creditCardNumber);
     }
   } 

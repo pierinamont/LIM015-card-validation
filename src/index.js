@@ -109,16 +109,51 @@ document.getElementById('cardbtn').addEventListener('click', getNumber);
 function getNumber() {
     //(1) Obtener input y colocarlo en reversa
     const inputCard = document.getElementById('inputCard').value;
-    const reverseInput = inputCard.split('').reverse();
+    const reverseInput = inputCard.split('').reverse().map(Number);
     
-    validator.isValid(reverseInput);
+    console.log(reverseInput);
   
     //(2) Alert para que no dejen el input vacío
     if(inputCard.length === 0) {
         alert('No puedes dejar este campo vacío');
     } 
 
-    //(3) Las posiciones pares se multiplican * 2
+    //(3) Operación a las posiciones pares 
+    let newArray = reverseInput.map((num, i) => {
+        if(i % 2 === 1) {
+            let double = (num*2);
+            const m = double.toString().split('').reduce(function(a, b) { 
+                if(double >= 10){ 
+                    return a + parseInt(b)
+                } else {
+                    return double;
+                }
+            }, 0);
+            return m;
+
+        } else {
+            return num;
+        }
+    }); 
+
+validator.isValid(newArray);
+   
+   //(5) Sumar todos los números del array
+   newArray = newArray.reduce((previus, next) => {
+    let sum = previus + next;
+    return sum
+});
+
+validator.isValid(newArray); 
+
+
+}
+
+
+
+
+
+/**let //(3) Las posiciones pares se multiplican * 2
     let newArray = reverseInput.map(Number);
     newArray = newArray.map((num, i) => {
         if (i % 2 === 1) {
@@ -136,29 +171,12 @@ function getNumber() {
             return num;
         }
     });
+    console.log(newArray);
 
-    validator.isValid(newArray);
-}
+    //(5) Sumar todos los números
+    newArray = newArray.reduce((previus, next) => {
+        let sum = previus + next;
+        return sum
+    });
 
-
-/*
-
-*/
-
-  /**let newArray = reverseInput.map(num => {
-        if(num % 2 == 0) {
-            let double = (num*2);
-            const m = double.toString().split('').reduce(function(a, b) { 
-                if(double >= 10){ 
-                    return a + parseInt(b)
-                } else {
-                    return double;
-                }
-            }, 0);
-            return m;
-        } else {
-            return num;
-        }
-    }); 
-
-console.log(newArray);*/
+    validator.isValid(newArray); */
