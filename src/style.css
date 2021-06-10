@@ -234,11 +234,66 @@ footer li {
     grid-gap: 10px;
     justify-content: center;
 }
-.card-valid-content img {
-    width: 300px;
-    align-self: center;
-    margin: 0 auto;
-}
+.card-body {
+    background-color: #DD5E57;
+    color: white;
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .card-body-content {
+    padding: 15px;
+    padding-right: 10px;
+    padding-left: 25px;
+   
+  }
+  
+  .first-content {
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+  }
+  
+  .first-content .card-text {
+      color: white;
+  }
+  .first-content span {
+    display: inline;
+    padding-right: 8px;
+    
+  }
+  
+  .main-content .card-text {
+    color: white;
+    font-size: 1.8rem;
+  }
+  .main-content span {
+    background-color: #F8C401;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: -5px;
+    margin-bottom: -4px;
+  }
+  .main-content p {
+    margin-bottom: -5px;
+  }
+
+  .footer-content  .card-text{
+    color: white;
+  }
+  .footer-content {
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    padding-right: 40px;
+  }
+  
+  
+  
 .card-valid-content:nth-child(2) {
     text-align: center;
 }
