@@ -287,6 +287,9 @@ footer li {
       background-color: #DD5E57;
       padding-left: 0px;
       margin-bottom: -7px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
   }
   .main-content .card-input::placeholder {
       color: white;
