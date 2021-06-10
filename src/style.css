@@ -80,18 +80,25 @@ main {
     float: left;
     margin: 0;
     padding: 0;
-    margin-left: 350px;
+    margin-left: 300px;
     margin-top: 150px;
+    width: 400px;
     
 }
 .info-content img {
     width: 170px;
 }
+.short-info {
+    width: 310px;
+    margin: 0 auto;
+}
 .info-content p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 100;
     margin-top: -5px;
     color: var(--text-color);
+    width: 300px;
+    padding: 0px;
 }
 .info-content .grey-btn {
     width: 170px;
@@ -105,7 +112,6 @@ main {
     border-radius: 12px;
     background: var(--grey-button); 
     cursor: pointer;
-    margin-bottom: 30px;
 }
 .info-content .grey-btn:hover {
     border: solid 2px var(--blue-button);
@@ -123,18 +129,21 @@ main {
     background: var(--blue-button); 
     cursor: pointer;
 }
+.info-content .blue-btn:hover { 
+    box-shadow: 2px 2px 6px rgb(179, 179, 179);
+}
 .info-bg {
     width: 65%;
     height: 721px;
     display: grid;
     margin: 0px;
     padding: 0px;
-    background-image: url('../images/infoBackground.svg');
+    background-image: url('../images/bg.svg');
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain; /*cover*/
     float:right;
-    position: relative;
+    /*position: relative;*/
 }
 /* PANTALLA PARA MOSTRAR INFORMACIÓN**/
 header {
@@ -162,6 +171,7 @@ footer ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    margin-top: auto;
 
 }
 footer li:nth-child(1) {
@@ -202,6 +212,8 @@ footer li {
     font-weight: 100;
     color: var(--text-color);
 }
+
+
 .show-info-content button {
     width: 170px;
     height: 43px;
@@ -214,8 +226,15 @@ footer li {
     border-radius: 12px;
     background: var(--grey-button);
     cursor: pointer;
-    float: right;
 }
+.show-info-content .back-btn {
+    float: left;
+}
+.show-info-content .valid-btn {
+    float: right;
+    margin-top: 80px;
+}
+
 .show-info-content button:hover {
     color: white;
     background-color: var(--blue-button);
@@ -343,4 +362,7 @@ footer li {
     border-radius: 12px;
     background: var(--blue-button); 
     cursor: pointer;
+}
+.card-valid-content button:hover {
+    box-shadow: 2px 2px 6px rgb(179, 179, 179);
 }
