@@ -102,17 +102,27 @@ function convert(e) {
         e.preventDefault();
     }
 
+    
 }
 
-//Fórmula de Luhn 
+// SOBREESCRIBIR EL INPUT A TARJETA
+document.getElementById('inputCard').addEventListener('keyup', cardText);
+
+function cardText() {
+    const inputCard = document.getElementById('inputCard').value; 
+    document.getElementById('card-input').value = inputCard
+}
+
+// FORMULA DE LUHN
 document.getElementById('cardbtn').addEventListener('click', getNumber);
+
 function getNumber() {
     //(1) Obtener input y colocarlo en reversa
-    const inputCard = document.getElementById('inputCard').value;
+    const inputCard = document.getElementById('inputCard').value; 
+    //document.getElementById('card-input').value = inputCard
     const reverseInput = inputCard.split('').reverse().map(Number);
-    
     console.log(reverseInput);
-  
+
     //(2) Alert para que no dejen el input vacío
     if(inputCard.length === 0) {
         alert('No puedes dejar este campo vacío');
@@ -130,27 +140,50 @@ function getNumber() {
                 }
             }, 0);
             return m;
-
         } else {
             return num;
         }
     }); 
-
-validator.isValid(newArray);
+    validator.isValid(newArray);
    
    //(5) Sumar todos los números del array
-   newArray = newArray.reduce((previus, next) => {
+    newArray = newArray.reduce((previus, next) => {
     let sum = previus + next;
     return sum
-});
-
-validator.isValid(newArray); 
-
-
+    });
+    validator.isValid(newArray); 
 }
 
+// Ocultar números
 
 
+// MASKIFY
+document.getElementById('inputCard').addEventListener('onkeypress', maskify); // onchange
+
+function maskify() {
+    const inputCard = document.getElementById('inputCard').value;
+    const reverseInput = inputCard.split('').reverse().map(Number);
+    console.log(reverseInput);
+
+    for(let i = 0; i < reverseInput.length - 4; i++) {
+        reverseInput[i] = '#';
+    }
+    reverseInput = reverseInput.join('');
+    return reverseInput;
+
+   
+   /*
+   let hideNum = reverseInput.map((num, i) => {
+       if (i < (num.length - 4)) {
+            return '#';
+       } else {
+           return num;
+       }
+    }); 
+    console.log(hideNum);
+    */
+    
+}
 
 
 /**let //(3) Las posiciones pares se multiplican * 2

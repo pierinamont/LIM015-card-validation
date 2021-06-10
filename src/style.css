@@ -281,7 +281,20 @@ footer li {
   .main-content p {
     margin-bottom: -5px;
   }
-
+   
+  .main-content .card-input {
+      border-style: none;
+      background-color: #DD5E57;
+      padding-left: 0px;
+      margin-bottom: -7px;
+  }
+  .main-content .card-input::placeholder {
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+     
+      
+  }
   .footer-content  .card-text{
     color: white;
   }
