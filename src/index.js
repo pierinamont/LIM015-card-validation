@@ -9,7 +9,7 @@ const showFooter = document.getElementsByClassName('footer');
 const infoContainer = document.getElementsByClassName('info-container');
 const showCardContent = document.getElementsByClassName('card-valid-container');
 const showInfoContainer = document.getElementsByClassName('show-info-container');
-
+const visa = document.getElementsByClassName('visa');
 //Función de botón para iniciar 
 document.getElementById('startbtn').addEventListener('click', start);
 function start() {
@@ -128,8 +128,7 @@ function getNumber() {
 }
 
 // MASKIFY
-
-document.getElementById('inputCard').addEventListener('keypress', maskify); // onchange
+document.getElementById('inputCard').addEventListener('keypress', maskify); 
 
 function maskify() {
     const inputCard = document.getElementById('inputCard').value;
@@ -141,4 +140,17 @@ function maskify() {
    
 }
 
- 
+//Marca de tarjetas para
+/*
+document.getElementById('inputCard').addEventListener('keypress', brands); 
+
+function brands() {
+    const inputCard = document.getElementById('inputCard').value;
+
+    for (let i = 0; i < inputCard.length; i++) {
+        if(inputCard[0] === 4) {
+            visa[i].style.display = 'block';
+        }
+    }
+}
+ */
