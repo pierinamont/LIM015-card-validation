@@ -45,15 +45,15 @@ const validator = {
   maskify: function(inputCard) {
     return inputCard.split('').map((num, i) => {
       if(i < inputCard.length - 4) {
-        return '#'
+        return '#';
       } else {
         return num;
       }
-    }).join('');
-    
+    })/**join('') */;
     
 
   }
+
 }
 
   export default validator;

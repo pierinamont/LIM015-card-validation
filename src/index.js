@@ -133,45 +133,12 @@ document.getElementById('inputCard').addEventListener('keypress', maskify); // o
 
 function maskify() {
     const inputCard = document.getElementById('inputCard').value;
-    let hideText = validator.maskify(inputCard);
-    console.log(hideText);
-    //return hideText.innerHTML;
+    let hideText = validator.maskify(inputCard).join(''); /** resultado que obtiene de validator */
+   // let finalNumber = parseInt(hideText);
+    //console.log(finalNumber); 
+    console.log(hideText); 
+   //document.getElementById('inputCard').value = hideText;
+   
 }
 
- /*
-   let hideNum = reverseInput.map((num, i) => {
-       if (i < (num.length - 4)) {
-            return '#';
-       } else {
-           return num;
-       }
-    }); 
-    console.log(hideNum);
-    */
-/**let //(3) Las posiciones pares se multiplican * 2
-    let newArray = reverseInput.map(Number);
-    newArray = newArray.map((num, i) => {
-        if (i % 2 === 1) {
-            return num*2;
-        } else {
-            return num;
-        }
-    });
-    
-    //(4) Sumar el resultado si es mayor o igual a 10
-    newArray = newArray.map((num) => {
-    if(num >= 10) {
-        return num -= 9;
-        } else {
-            return num;
-        }
-    });
-    console.log(newArray);
-
-    //(5) Sumar todos los números
-    newArray = newArray.reduce((previus, next) => {
-        let sum = previus + next;
-        return sum
-    });
-
-    validator.isValid(newArray); */
+ 
