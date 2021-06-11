@@ -50,19 +50,18 @@ main {
 .home-content button {
     width: 170px;
     height: 43px;
-    color: var(--text-button);
     margin-top: 30px;
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     border: none;
     border-radius: 12px;
-    background: var(--grey-button);
     cursor: pointer;
-}
-.home-content  button:hover {
     color: white;
     background-color: var(--blue-button);
+}
+.home-content  button:hover {
+    box-shadow: 2px 2px 6px rgb(179, 179, 179);
 }
 
 /* PANTALLA DE INFORMACIÓN**/
@@ -156,6 +155,7 @@ header img {
     width:auto;
     margin-left: 30px;
     padding-top: 10px;
+    cursor: pointer;
 }
 footer {
     margin: 0 auto;
@@ -193,6 +193,7 @@ footer li {
 .show-info-contents {
     margin: 0 auto;
     width: 800px;
+    height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;

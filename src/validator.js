@@ -4,14 +4,12 @@
 
 const validator = {
     isValid: function(inputCard) {
-      const reverseInput = inputCard.split('').reverse().map(Number);
+    const reverseInput = inputCard.split('').reverse().map(Number);
     console.log(reverseInput);
-
     //(2) Alert para que no dejen el input vacío
     if(inputCard.length === 0) {
         alert('No puedes dejar este campo vacío');
     } 
-
     //(3) Operación a las posiciones pares 
     let newArray = reverseInput.map((num, i) => {
         if(i % 2 === 1) {
@@ -29,8 +27,8 @@ const validator = {
         }
     }); 
     console.log(newArray);
-   
-   //(5) Sumar todos los números del array
+  
+   //(4) Sumar todos los números del array
     newArray = newArray.reduce((previus, next) => {
     let sum = previus + next;
     return sum
@@ -42,6 +40,19 @@ const validator = {
     } else {
       return false;
     }
+  },
+
+  maskify: function(inputCard) {
+    return inputCard.split('').map((num, i) => {
+      if(i < inputCard.length - 4) {
+        return '#'
+      } else {
+        return num;
+      }
+    }).join('');
+    
+    
+
   }
 }
 
