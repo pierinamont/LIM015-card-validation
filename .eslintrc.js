@@ -12,5 +12,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "linebreak-style": [0,"error", "windows"],
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "object-shorthand": ["error", "always"],
   },
 };

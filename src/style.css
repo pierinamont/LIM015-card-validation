@@ -335,7 +335,7 @@ footer li {
    
   .main-content .card-input {
       border-style: none;
-      background-color: #DD5E57;
+      background-color: transparent;
       padding-left: 0px;
       margin-bottom: -7px;
       color: white;
@@ -344,11 +344,9 @@ footer li {
       width: 250px;
   }
   .main-content .card-input::placeholder {
-      color: white;
+      color: rgba(255,255,255,0.5); 
       font-family: 'Poppins', sans-serif;
       font-size: 1.8rem;
-     
-      
   }
   .footer-content  .card-text{
     color: white;
