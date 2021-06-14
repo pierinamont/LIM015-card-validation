@@ -29,31 +29,4 @@ Feedback
 Foto
 
 ## 4. Plan de acción
-Objetivos de Aprendizaje que voy a prioritizar.
-
-_No olvides a pensar en tu plan de acción - los objetivos que vas a prioritizar - y agrega tu plan en el README._
-
-
-### HTML y CSS
-
-* [ ] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-
-* [ ] Uso de selectores de CSS.
-* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
-* [ ] Manipulación de strings.
-* [ ] Uso de condicionales (if-else | switch | operador ternario)
-
-
-### Testing
-
-* [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
-
-
-### Definición del producto
-
-En el `README.md`, cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso
-para definir el producto final a nivel de experiencia y de interfaz.
-
-* Quiénes son los principales usuarios de producto.
-* Cuáles son los objetivos de estos usuarios en relación con tu producto.
-* Cómo crees que el producto que estás creando está resolviendo sus problemas.
+Para el desarrollo del proyecto (luego de realizar el prototipo) comencé priorizando lo que se me hacía más fácil, en este caso, el HTML y CSS. Luego de maquetar la parte visual, fui implementando el javaScript. En este punto empecé a organizar más detalladamente cada uno de los procesos para desarrollar la funcionalidad necesaria. Para ello, utilicé un "kanban board" en Notion, donde iba colocando los pasos que hacía. Así mismo, implementé una tabla en donde colocaba todos los "bugs" 🐞 que tenía en el camino y colocaba los recursos que me ayudaron a resolverlos.
