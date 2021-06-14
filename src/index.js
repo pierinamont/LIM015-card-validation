@@ -50,6 +50,9 @@ function headerImg() {
   for (let i = 0; i < showFooter.length; i++) {
     showFooter[i].style.display = 'none';
   }
+  for (let i = 0; i < alertContainer.length; i++) {
+    alertContainer[i].style.display = 'none';
+  }
 }
 
 // Función de botón de información 
