@@ -132,14 +132,15 @@ function convert(e) {
   }
 }
 
-// SOBREESCRIBIR EL INPUT A TARJETA
+// Sobreescribir el input a la tarjeta
 document.getElementById('inputCard').addEventListener('keyup', cardText);
 function cardText() {
   const inputCard = document.getElementById('inputCard').value;
   document.getElementById('card-input').value = inputCard;
+  document.getElementById('card-input').disabled = true; 
 }
 
-// FORMULA DE LUHN
+// Fórmula de Luhn
 document.getElementById('cardbtn').addEventListener('click', getNumber);
 function getNumber() {
   // (1) Obtener input y colocarlo en reversa
@@ -156,33 +157,34 @@ function getNumber() {
     if (totalValidator === true) {
       alertContainer[i].style.display = 'block';
       noValid[i].style.display = 'none';
-      cross[i].style.display = 'none';
       valid[i].style.display = 'block';
-      check[i].style.display = 'block';
+      
     } else {
       alertContainer[i].style.display = 'block';
       noValid[i].style.display = 'block';
-      cross[i].style.display = 'block';
       valid[i].style.display = 'none';
-      check[i].style.display = 'none';
+      
     }
   }
 }
 
-// MASKIFY
+// Función para Maskify
 document.getElementById('inputCard').addEventListener('keypress', maskify); 
 
 function maskify() {
   const inputCard = document.getElementById('inputCard').value;
-  const newInput = validator.maskify(inputCard);
-  console.log(newInput); 
-  // document.getElementById('inputCard').value = newInput;
-  
+  const newValue = validator.maskify(inputCard);
+  console.log(newValue); 
+
+  // document.getElementById('inputCard').value =  newValue; 
+  // document.getElementById('inputCard').innerHTML =  newValue; 
 }
+
 
 // Limpiar el input
 newCardbtn.addEventListener('click', clean);
 function clean() {  
+  document.getElementById('card-input').value = "";
   document.getElementById('inputCard').value = "";
   cardbtn.style.display = 'block';
   newCardbtn.style.display = 'none';
