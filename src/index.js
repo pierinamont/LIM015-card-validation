@@ -13,6 +13,11 @@ const cardBody = document.getElementById('card-body');
 const visa = document.getElementById('visa');
 const mastercard = document.getElementById('mastercard');
 const americanexpress = document.getElementById('americanexpress');
+const alertContainer = document.getElementsByClassName('alert-container');
+const valid = document.getElementsByClassName('valid');
+const check = document.getElementsByClassName('check');
+const noValid = document.getElementsByClassName('no-valid');
+const cross = document.getElementsByClassName('cross');
 
 // Función de botón para iniciar 
 document.getElementById('startbtn').addEventListener('click', start);
@@ -129,6 +134,20 @@ function getNumber() {
   const inputCard = document.getElementById('inputCard').value; 
   const totalValidator = validator.isValid(inputCard);
   console.log(totalValidator);
+  
+  for (let i = 0; i < alertContainer.length; i++) {
+    if(totalValidator === true) {
+      alertContainer[i].style.display = 'block';
+      noValid[i].style.display = 'none';
+      cross[i].style.display = 'none';
+    } else {
+      alertContainer[i].style.display = 'block';
+      noValid[i].style.display = 'block';
+      cross[i].style.display = 'block';
+      valid[i].style.display = 'none';
+      check[i].style.display = 'none';
+    }
+  }
 }
 
 // MASKIFY
@@ -154,24 +173,26 @@ function brands() {
         cardBody.style.background ='#013777';
       } 
       // mastercard
-      if (inputCard.slice(0, 1) >= 51 && inputCard.slice(0, 1) <= 57) {
+      if (inputCard[0, 1] == [5, 1] ) {
         visa.style.display = 'none';
         americanexpress.style.display = 'none';
         mastercard.style.display = 'block';
-        cardBody.style.background ='#05712c';
+        cardBody.style.background ='#233d4f';
       }
       // americanexpress
       if (inputCard.slice(0) == 3) {
         visa.style.display = 'none';
         mastercard.style.display = 'none';
         americanexpress.style.display = 'block';
-        cardBody.style.background ='#9f9f9c';
+        cardBody.style.background ='#5e5c5f';
       }
-
-      if (inputcard.length === false) {
+       // tarjeta se queda con el color original
+      if (inputCard.length === 0) {
         cardBody.style.background ='#DD5E57';
         visa.style.display = 'none';
         mastercard.style.display = 'none';
+        americanexpress.style.display = 'none';
       }
+      
 }
 
