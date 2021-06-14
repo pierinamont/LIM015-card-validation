@@ -10,6 +10,8 @@ const infoContainer = document.getElementsByClassName('info-container');
 const showCardContent = document.getElementsByClassName('card-valid-container');
 const showInfoContainer = document.getElementsByClassName('show-info-container');
 const cardBody = document.getElementById('card-body');
+const cardbtn = document.getElementById('cardbtn');
+const newCardbtn = document.getElementById('new-cardbtn');
 const visa = document.getElementById('visa');
 const mastercard = document.getElementById('mastercard');
 const americanexpress = document.getElementById('americanexpress');
@@ -35,6 +37,10 @@ document.getElementById('header-img').addEventListener('click', headerImg);
 document.getElementById('back-btn').addEventListener('click', headerImg);
 function headerImg() {
 
+  document.getElementById('inputCard').value = "";
+  cardbtn.style.display = 'block';
+  newCardbtn.style.display = 'none';
+
   for (let i = 0; i < infoContent.length; i++) {
     infoContent[i].style.display = 'block';
   }
@@ -49,6 +55,9 @@ function headerImg() {
   }
   for (let i = 0; i < showFooter.length; i++) {
     showFooter[i].style.display = 'none';
+  }
+  for (let i = 0; i < alertContainer.length; i++) {
+    alertContainer[i].style.display = 'none';
   }
   for (let i = 0; i < alertContainer.length; i++) {
     alertContainer[i].style.display = 'none';
@@ -138,11 +147,18 @@ function getNumber() {
   const totalValidator = validator.isValid(inputCard);
   console.log(totalValidator);
   
+  // Botón de nueva validación 
+    cardbtn.style.display = 'none';
+    newCardbtn.style.display = 'block';
+    
+  // Alert que indica la validez de la tarjeta
   for (let i = 0; i < alertContainer.length; i++) {
-    if(totalValidator === true) {
+    if (totalValidator === true) {
       alertContainer[i].style.display = 'block';
       noValid[i].style.display = 'none';
       cross[i].style.display = 'none';
+      valid[i].style.display = 'block';
+      check[i].style.display = 'block';
     } else {
       alertContainer[i].style.display = 'block';
       noValid[i].style.display = 'block';
@@ -158,13 +174,28 @@ document.getElementById('inputCard').addEventListener('keypress', maskify);
 
 function maskify() {
   const inputCard = document.getElementById('inputCard').value;
-  let newInput = validator.maskify(inputCard);
+  const newInput = validator.maskify(inputCard);
   console.log(newInput); 
-  //document.getElementById('inputCard').value = newInput;
+  // document.getElementById('inputCard').value = newInput;
   
 }
 
+// Limpiar el input
+newCardbtn.addEventListener('click', clean);
+function clean() {  
+  document.getElementById('inputCard').value = "";
+  cardbtn.style.display = 'block';
+  newCardbtn.style.display = 'none';
+
+  for (let i = 0; i < alertContainer.length; i++) {
+    alertContainer[i].style.display = 'none';
+  }
+
+}
+
+
 // Marca de tarjetas para 
+/*
 document.getElementById('inputCard').addEventListener('keypress', brands); 
 function brands() {
     const inputCard = document.getElementById('inputCard').value;
@@ -198,4 +229,4 @@ function brands() {
       }
       
 }
-
+*/

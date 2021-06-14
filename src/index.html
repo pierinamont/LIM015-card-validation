@@ -69,14 +69,13 @@
               <div class="card-body-content">
                 <div class="first-content">
                    <p class="card-text">Fast Card</p>
-                   <!--<span>Bank Logo</span>-->
                     <span class="visa" id="visa" style="display: none"></span>
                     <span class="mastercard" id="mastercard" style="display: none"></span>
                     <span class="americanexpress" id="americanexpress" style="display: none"></span>
                 </div>
                 <div class="main-content">
                    <span></span><br>
-                   <input class="card-input" type="text" name="" id="card-input" placeholder="1234 5678 9100">
+                   <input class="card-input" type="text" name="" id="card-input" placeholder="1234 5678 9100" required>
                 </div>
                 <div class="footer-content">
                   <p class="card-text">JOHN DOE</p>
@@ -89,6 +88,7 @@
              <p>Coloca el número de tu tarjeta en la casilla:</p>
              <input type="text" name="" id="inputCard" placeholder="número de tarjeta" pattern="^[0-9]+" maxlength="16" required><br><br> <!--pattern="\d{1,13}"-->
              <button id="cardbtn">Validar</button>
+             <button id="new-cardbtn" style="display: none">Nueva validación</button>
           </div>
          </div>
        </div>
