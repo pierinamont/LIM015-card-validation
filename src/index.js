@@ -206,10 +206,16 @@ function brands() {
         mastercard.style.display = 'none';
         americanexpress.style.display = 'none';
         visa.style.display = 'block';
-        cardBody.style.background ='#013777';
+        cardBody.style.background = '#013777';
       }
        // americanexpress
-       if (inputCard[0] == 3 && inputCard[1] == 4 || inputCard[1] == 7) {
+       if (inputCard[0] == 3 && inputCard[1] == 4) {
+        visa.style.display = 'none';
+        mastercard.style.display = 'none';
+        dinersClub.style.display = 'none';
+        americanexpress.style.display = 'block';
+        cardBody.style.background ='#5e5c5f';
+      } else if (inputCard[0] == 3 && inputCard[1] == 7 ) {
         visa.style.display = 'none';
         mastercard.style.display = 'none';
         dinersClub.style.display = 'none';
