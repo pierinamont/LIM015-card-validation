@@ -15,11 +15,10 @@ const newCardbtn = document.getElementById('new-cardbtn');
 const visa = document.getElementById('visa');
 const mastercard = document.getElementById('mastercard');
 const americanexpress = document.getElementById('americanexpress');
+const dinersClub = document.getElementById('diners-club');
 const alertContainer = document.getElementsByClassName('alert-container');
 const valid = document.getElementsByClassName('valid');
-const check = document.getElementsByClassName('check');
 const noValid = document.getElementsByClassName('no-valid');
-const cross = document.getElementsByClassName('cross');
 
 // Función de botón para iniciar 
 document.getElementById('startbtn').addEventListener('click', start);
@@ -175,11 +174,9 @@ function maskify() {
   const inputCard = document.getElementById('inputCard').value;
   const newValue = validator.maskify(inputCard);
   console.log(newValue); 
-
   // document.getElementById('inputCard').value =  newValue; 
   // document.getElementById('inputCard').innerHTML =  newValue; 
 }
-
 
 // Limpiar el input
 newCardbtn.addEventListener('click', clean);
@@ -188,6 +185,10 @@ function clean() {
   document.getElementById('inputCard').value = "";
   cardbtn.style.display = 'block';
   newCardbtn.style.display = 'none';
+  cardBody.style.background ='#DD5E57';
+  visa.style.display = 'none';
+  mastercard.style.display = 'none';
+  americanexpress.style.display = 'none';
 
   for (let i = 0; i < alertContainer.length; i++) {
     alertContainer[i].style.display = 'none';
@@ -195,32 +196,41 @@ function clean() {
 
 }
 
+// Marca de tarjetas 
 
-// Marca de tarjetas para 
-/*
 document.getElementById('inputCard').addEventListener('keypress', brands); 
 function brands() {
     const inputCard = document.getElementById('inputCard').value;
       // visa
-      if (inputCard.slice(0) == 4) {
+      if (inputCard.slice(0) === 4) {
         mastercard.style.display = 'none';
         americanexpress.style.display = 'none';
         visa.style.display = 'block';
         cardBody.style.background ='#013777';
-      } 
-      // mastercard
-      if (inputCard[0, 1] == [5, 1] ) {
+      }
+       // americanexpress
+       if (inputCard[0] == 3 && inputCard[1] == 4 || inputCard[1] == 7) {
+        visa.style.display = 'none';
+        mastercard.style.display = 'none';
+        dinersClub.style.display = 'none';
+        americanexpress.style.display = 'block';
+        cardBody.style.background ='#5e5c5f';
+      }
+      // mastercard - corregir
+      if (inputCard[0] == 5 && inputCard[1] == 4|| inputCard[1] == 2 || inputCard[1] == 3 || inputCard[1] == 1 || inputCard[1] == 5) {
         visa.style.display = 'none';
         americanexpress.style.display = 'none';
+        dinersClub.style.display = 'none';
         mastercard.style.display = 'block';
         cardBody.style.background ='#233d4f';
       }
-      // americanexpress
-      if (inputCard.slice(0) == 3) {
+      // diners club
+      if (inputCard[0] == 3 && inputCard[1] == 6) {
         visa.style.display = 'none';
         mastercard.style.display = 'none';
-        americanexpress.style.display = 'block';
-        cardBody.style.background ='#5e5c5f';
+        americanexpress.style.display = 'none';
+        dinersClub.style.display = 'block';
+        cardBody.style.background ='#aaadac';
       }
        // tarjeta se queda con el color original
       if (inputCard.length === 0) {
@@ -228,7 +238,8 @@ function brands() {
         visa.style.display = 'none';
         mastercard.style.display = 'none';
         americanexpress.style.display = 'none';
+        dinersClub.style.display = 'none';
       }
       
 }
-*/
+

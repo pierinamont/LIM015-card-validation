@@ -331,6 +331,16 @@ footer li {
     background-size: contain;
     padding: 0px;
 }
+.first-content .diners-club {
+    width: 120px;
+    height: auto;
+    display: inline;
+    background-image: url(../images/Diners-Club.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0px;
+}
   
   
   .main-content .card-text {

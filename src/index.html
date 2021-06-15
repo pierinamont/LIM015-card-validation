@@ -57,8 +57,8 @@
       <!--PANTALLA PARA CARD VALIDATION-->
       <div class="alert-container" style="display: none">
         <div class="alert-p">
-          <p class="valid">Tarjeta válida</p><img class="check" src="../images/check.svg" alt="">
-          <p class="no-valid">Tarjeta no válida</p><img class="cross" src="../images/remove.svg" alt="">
+          <p class="valid">Tarjeta válida ✔️</p>
+          <p class="no-valid">Tarjeta no válida ❌</p>
         </div>
       </div>  
       
@@ -72,10 +72,11 @@
                     <span class="visa" id="visa" style="display: none"></span>
                     <span class="mastercard" id="mastercard" style="display: none"></span>
                     <span class="americanexpress" id="americanexpress" style="display: none"></span>
+                    <span class="diners-club" id="diners-club" style="display: none"></span>
                 </div>
                 <div class="main-content">
                    <span></span><br>
-                   <input class="card-input" type="text" name="" id="card-input" placeholder="1234 5678 9100" required>
+                   <input id="card-input" class="card-input" type="text" name="" id="card-input" placeholder="1234 5678 9100" required>
                 </div>
                 <div class="footer-content">
                   <p class="card-text">JOHN DOE</p>
@@ -86,7 +87,7 @@
            </div>
            <div class="card-valid-content">
              <p>Coloca el número de tu tarjeta en la casilla:</p>
-             <input type="text" name="" id="inputCard" placeholder="número de tarjeta" pattern="^[0-9]+" maxlength="16" required><br><br> <!--pattern="\d{1,13}"-->
+             <input type="text" name="" id="inputCard" placeholder="número de tarjeta" pattern="^[0-9]+" maxlength="16" required><br><br> 
              <button id="cardbtn">Validar</button>
              <button id="new-cardbtn" style="display: none">Nueva validación</button>
           </div>
