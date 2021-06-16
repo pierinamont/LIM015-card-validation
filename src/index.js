@@ -7,7 +7,8 @@ const infoContent = document.getElementsByClassName('info-container');
 const showHeader = document.getElementsByClassName('header');
 const showFooter = document.getElementsByClassName('footer');
 const infoContainer = document.getElementsByClassName('info-container');
-const showCardContent = document.getElementsByClassName('card-valid-container');
+const showCardContent = document.getElementsByClassName('card-valid-container'); 
+const cardValidContent = document.getElementsByClassName('card-valid-content'); 
 const showInfoContainer = document.getElementsByClassName('show-info-container');
 const cardBody = document.getElementById('card-body');
 const cardbtn = document.getElementById('cardbtn');
@@ -20,7 +21,7 @@ const alertContainer = document.getElementsByClassName('alert-container');
 const valid = document.getElementsByClassName('valid');
 const noValid = document.getElementsByClassName('no-valid');
 
-// Función de botón para iniciar 
+// BOTÓN PARA INICIAR
 document.getElementById('startbtn').addEventListener('click', start);
 function start() {
   for (let i = 0; i < startContent.length; i++) {
@@ -31,11 +32,11 @@ function start() {
   }
 }
 
-// Click en header img
+// CLICK EN HEADER IMG Y BOTÓN "ATRÁS"
 document.getElementById('header-img').addEventListener('click', headerImg);
 document.getElementById('back-btn').addEventListener('click', headerImg);
-function headerImg() {
 
+function headerImg() {
   document.getElementById('inputCard').value = "";
   cardbtn.style.display = 'block';
   newCardbtn.style.display = 'none';
@@ -63,7 +64,7 @@ function headerImg() {
   }
 }
 
-// Función de botón de información 
+// BOTÓN "INFORMACIÓN"
 document.getElementById('infobtn').addEventListener('click', showInfo);
 function showInfo() {
   for (let i = 0; i < showInfoContent.length; i++) {
@@ -80,7 +81,7 @@ function showInfo() {
   }
 }
 
-// Función de botón para ir a validar tarjeta 
+// BOTÓN PARA IR A VALIDAR TARJETA 
 document.getElementById('validbtn').addEventListener('click', showCard);
 function showCard() {
   for (let i = 0; i < infoContainer.length; i++) {
@@ -114,7 +115,8 @@ function displayCard() {
   }
 }
 
-// Permitir colocar solo números en el input text
+// PERMITIR SOLO NÚMEROS EN EL INPUT TEXT
+
 document.getElementById('inputCard').addEventListener('keypress', convert);
 function convert(e) {
   function justNumbers(k) {
@@ -131,18 +133,11 @@ function convert(e) {
   }
 }
 
-// Sobreescribir el input a la tarjeta
-document.getElementById('inputCard').addEventListener('keyup', cardText);
-function cardText() {
-  const inputCard = document.getElementById('inputCard').value;
-  document.getElementById('card-input').value = inputCard;
-  document.getElementById('card-input').disabled = true; 
-}
 
-// Fórmula de Luhn
+// FÓRMULA DE LUHN
 document.getElementById('cardbtn').addEventListener('click', getNumber);
 function getNumber() {
-  // (1) Obtener input y colocarlo en reversa
+  // Obtener input y colocarlo en reversa
   const inputCard = document.getElementById('inputCard').value; 
   const totalValidator = validator.isValid(inputCard);
   console.log(totalValidator);
@@ -150,7 +145,10 @@ function getNumber() {
   // Botón de nueva validación 
     cardbtn.style.display = 'none';
     newCardbtn.style.display = 'block';
-    
+
+  // Ocultar input 
+    document.getElementById("inputCard").style.display = "none";
+  
   // Alert que indica la validez de la tarjeta
   for (let i = 0; i < alertContainer.length; i++) {
     if (totalValidator === true) {
@@ -165,30 +163,39 @@ function getNumber() {
       
     }
   }
+
 }
 
-// Función para Maskify
+// MASKIFY
 document.getElementById('inputCard').addEventListener('keypress', maskify); 
-
+document.getElementById('inputCard').addEventListener('focus', maskify); 
+//document.getElementById('card-input').addEventListener('keypress', maskify); onchange
 function maskify() {
+  // input text
   const inputCard = document.getElementById('inputCard').value;
-  const newValue = validator.maskify(inputCard);
-  console.log(newValue); 
-  // document.getElementById('inputCard').value =  newValue; 
-  // document.getElementById('inputCard').innerHTML =  newValue; 
+  const finalValue = validator.maskify(inputCard); 
+  console.log(finalValue); 
+
+  // visualizar input text en la tarjeta 
+  document.getElementById('card-input').value = validator.maskify(inputCard); 
+  document.getElementById('card-input').disabled = true; 
 }
 
-// Limpiar el input
+
+// LIMPIAR EL INPUT 
 newCardbtn.addEventListener('click', clean);
 function clean() {  
   document.getElementById('card-input').value = "";
   document.getElementById('inputCard').value = "";
+  document.getElementById("inputCard").style.display = "inline-block";
   cardbtn.style.display = 'block';
   newCardbtn.style.display = 'none';
   cardBody.style.background ='#DD5E57';
   visa.style.display = 'none';
   mastercard.style.display = 'none';
   americanexpress.style.display = 'none';
+  dinersClub.style.display = 'none';
+  
 
   for (let i = 0; i < alertContainer.length; i++) {
     alertContainer[i].style.display = 'none';
@@ -196,11 +203,25 @@ function clean() {
 
 }
 
-// Marca de tarjetas 
 
+
+// TARJETAS
+/*
 document.getElementById('inputCard').addEventListener('keypress', brands); 
 function brands() {
-    const inputCard = document.getElementById('inputCard').value;
+
+  let brandCard = validator.getBrandCard(inputCard);
+  console.log(brandCard);
+
+  if (brandCard == 'visa') {
+    mastercard.style.display = 'none';
+    americanexpress.style.display = 'none';
+    visa.style.display = 'block';
+    cardBody.style.background = '#013777';
+  } 
+  
+    
+    
       // visa
       if (inputCard.slice(0) == 4) {
         mastercard.style.display = 'none';
@@ -271,5 +292,6 @@ function brands() {
         dinersClub.style.display = 'none';
       }
       
+      
 }
-
+*/

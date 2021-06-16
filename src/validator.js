@@ -49,5 +49,17 @@ const validator = {
     newArray = newArray.join('');
     return newArray.concat(noReplaceNums);
   },
+
+  /*
+  getBrandCard (inputCard) {
+    let brandNumber = inputCard.toString(); // .value
+    // visa
+    if (brandNumber.slice(0) == 4) {
+      return visa;
+    }
+  
+  }
+  */
+  
 }
 export default validator;

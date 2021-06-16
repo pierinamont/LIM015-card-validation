@@ -141,8 +141,7 @@ main {
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain; /*cover*/
-    float:right;
-    /*position: relative;*/
+    float: right;
 }
 /* PANTALLA PARA MOSTRAR INFORMACIÓN**/
 header {
@@ -152,14 +151,13 @@ header {
 }
 header img {
     height: 50px;
-    width:auto;
+    width: auto;
     margin-left: 30px;
     padding-top: 10px;
     cursor: pointer;
 }
 footer {
     margin: 0 auto;
-    /*margin-top: 200px;*/
     width: 100%;
     position: fixed;
     font-size: 1.2rem;
@@ -284,7 +282,6 @@ footer li {
     padding: 15px;
     padding-right: 10px;
     padding-left: 25px;
-   
   }
   
   .first-content {
@@ -342,7 +339,6 @@ footer li {
     padding: 0px;
 }
   
-  
   .main-content .card-text {
     color: white;
     font-size: 1.8rem;
@@ -384,8 +380,6 @@ footer li {
     justify-content: space-between;
     padding-right: 40px;
   }
-  
-  
   
 .card-valid-content:nth-child(2) {
     text-align: center;
