@@ -5,17 +5,17 @@
     <title>Fast Card</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
   </head>
   <body>
     <header class="header" style="display: none">
-         <img id="header-img" class="header-img" src="../images/logo-horizontal.svg" alt="">
+         <img id="header-img" class="header-img" src="./images/logo-horizontal.svg" alt="">
     </header>
     <main>
         <!--PANTALLA DE INICIO-->
         <div class="home-container">
           <div class="home-content">
-              <img src="../images/logo-vertical.svg" alt="logotipo de fast card">
+              <img src="./images/logo-vertical.svg" alt="logotipo de fast card">
               <p>El mejor sistema online para validar<br>tarjetas de crédito.</p>
               <button id="startbtn">Iniciar</button>
           </div>
@@ -24,7 +24,7 @@
       <!--PANTALLA DE INFORMACIÓN-->
       <div class="info-container" style="display: none">
           <div class="info-content">
-              <img src="../images/logo-vertical.svg" alt="logotipo de fast card">
+              <img src="./images/logo-vertical.svg" alt="logotipo de fast card">
               <div class="short-info">
                 <p class="short-info-p">Puedes conocer más sobre nuestro sistema<br>haciendo click en "información".</p>
               </div>
@@ -41,8 +41,8 @@
              <h2>Funcionamiento del sistema</h2>
              <h3>Verificación del algoritmo de Luhn</h3>
              <p> Verificaremos su número con el Algoritmo de Luhn para ver si es un número de tarjeta de crédito válido.</p>
-             <img src="../images/thinking.svg" alt="">
-             <button id="back-btn" class="back-btn" id="back-btn">Atrás</button>
+             <img src="./images/thinking.svg" alt="">
+             <button id="back-btn" class="back-btn">Atrás</button>
            </div>
            <div class="show-info-content">
               <h2>Seguridad</h2>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="main-content">
                    <span></span><br>
-                   <input id="card-input" class="card-input" type="text" name="" id="card-input" placeholder="1234 5678 9100" required>
+                   <input id="card-input" class="card-input" type="text" placeholder="1234 5678 9100" required>
                 </div>
                 <div class="footer-content">
                   <p class="card-text">JOHN DOE</p>
@@ -87,7 +87,7 @@
            </div>
            <div class="card-valid-content">
              <p id="card-text">Coloca el número de tu tarjeta en la casilla:</p>
-             <img class="card-img" id="card-img" src="../images/payment.svg" alt=""  style="display: none">
+             <img class="card-img" id="card-img" src="./images/payment.svg" alt=""  style="display: none">
              <input type="text" name="" class="inpudCard" id="inputCard" placeholder="número de tarjeta" pattern="^[0-9]+" maxlength="16" required><br><br> 
              <button id="cardbtn">Validar</button>
              <button id="new-cardbtn" style="display: none">Nueva validación</button>
@@ -106,6 +106,5 @@
       </ul>
     </footer>
     <script src="index.js" type="module"></script>
-    <script src="validator.js" type="module"></script> 
   </body>
 </html>

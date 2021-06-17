@@ -1,8 +1,9 @@
 const validator = {
   isValid: function (inputCard) {
-    const reverseInput = inputCard.split('').reverse().map(Number);
+    const reverseInput = inputCard.toString().split('').reverse().map(Number);
+    console.log(reverseInput); //
     // Alert para que no dejen el input vacío
-    if (inputCard.length === 0) {
+    if (reverseInput.length === 0) {
       alert('No puedes dejar este campo vacío');
     } 
     // Operación a las posiciones pares 
@@ -21,13 +22,13 @@ const validator = {
         return num;
       }
     }); 
-    //console.log(newArray);
+    console.log(newArray);
     // Sumar todos los números del array
     newArray = newArray.reduce((previus, next) => {
       const sum = previus + next;
       return sum;
-      });
-    console.log(newArray); 
+      }, 0);
+    console.log(newArray); //
 
     if (newArray % 10 === 0) {
       return true;
@@ -42,17 +43,16 @@ const validator = {
     // Números que serán visibles
     let noReplaceNums = inputCard.slice(-4);
     // Nuevo array que oculta los números
-    let newArray = replaceNums.split('').map(function(num) {
-      return num = '#';
+    let newArray = replaceNums.split('').map(function() {
+      return '#';
     });
     newArray = newArray.join('');
     return newArray.concat(noReplaceNums);
   },
 
   
-  getBrandCard: (inputCard) => {
-    let value = inputCard.value;
-
+  getBrandCard: function (inputCard) {
+    let value = inputCard.toString(); // no detecta el valor inputcard.value
     let firstNum = value.slice(0);
     let twoNum = value.slice(0, 2);
   
@@ -69,5 +69,6 @@ const validator = {
     
 
   }
+  
 }
 export default validator;
