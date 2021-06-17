@@ -47,8 +47,8 @@
            <div class="show-info-content">
               <h2>Seguridad</h2>
               <h3>¿Existe algún riesgo al usar la herramienta de validación de tarjetas de crédito en línea?</h3>
-              <p>No hay riesgo y este servicio es seguro de usar, seguro. El único riesgo es que alguien esté literalmente mirando la pantalla mientras usa la herramienta.<br><br>
-              No podemos acceder ni accederemos a la información que inserte en el sitio web, incluido el número de su tarjeta de crédito. Todos los cálculos se realizan en su navegador para que su número de tarjeta de crédito permanezca seguro con usted.</p>
+              <p>No hay riesgo y este servicio es seguro de usar. El único riesgo es que alguien esté literalmente mirando la pantalla mientras usa la herramienta.<br><br>
+              No podemos acceder ni accederemos a la información que inserte en el sitio web. Todos los cálculos se realizan en su navegador para que su número de tarjeta de crédito permanezca seguro con usted.</p>
               <button class="valid-btn" id="validbutton">Ir a validar</button> 
            </div>
          </div>
@@ -86,8 +86,9 @@
              </div>
            </div>
            <div class="card-valid-content">
-             <p>Coloca el número de tu tarjeta en la casilla:</p>
-             <input type="text" name="" class="inpudCard" id="inputCard" placeholder="número de tarjeta" pattern="^[0-9]+" maxlength="16"><br><br> 
+             <p id="card-text">Coloca el número de tu tarjeta en la casilla:</p>
+             <img class="card-img" id="card-img" src="../images/payment.svg" alt=""  style="display: none">
+             <input type="text" name="" class="inpudCard" id="inputCard" placeholder="número de tarjeta" pattern="^[0-9]+" maxlength="16" required><br><br> 
              <button id="cardbtn">Validar</button>
              <button id="new-cardbtn" style="display: none">Nueva validación</button>
           </div>
