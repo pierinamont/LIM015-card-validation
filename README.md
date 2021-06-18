@@ -18,6 +18,7 @@ Este proyecto fue creado para el Bootcamp de  <a  href="https://www.laboratoria.
 > Elaborado con HTML, CSS y JavaScript
 
 ## 2. Imagen del proyecto
+![](https://i.postimg.cc/LXMq8JfX/proyectofinal.png)
 
 ## 3. Investigación UX
 
@@ -32,7 +33,7 @@ Fast Card va dirigido a personas de 20 a 38 años de edad que realizan compras o
 
 ### Prototipo final
 ![](https://i.postimg.cc/htq1NtZS/prototipo-final.png)
-> Se hizo algunos pequeños cambios en las dos últimas pantallas, esto se puede visualizar en el código y en github-pages.
+> Se hizo algunos pequeños cambios en las dos últimas pantallas, esto se puede visualizar en el punto 2.
 
 ## 4. Objetivos de aprendizaje
 
