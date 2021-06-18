@@ -25,13 +25,14 @@ Este proyecto fue creado para el Bootcamp de  <a  href="https://www.laboratoria.
 Fast Card va dirigido a personas de 20 a 38 años de edad que realizan compras online de manera frecuente. Estos usuarios desean estar al tanto de la validez de su tarjeta antes de realizar compras para evitar cualquier error o inconveniente, por tanto, la plataforma les permitirá saber si su tarjeta se encuentra disponible para ser utilizada.
 
 ### Primer prototipo
-Foto
+![](https://i.postimg.cc/zfJHFZLX/prototipo01.png)
 
 ### Feedback
-➡ Los usuarios sugirieron que exista una sección con información sobre la web para estar seguros de que no se guardará su número de tarjeta de crédito.
+➡ Los usuarios sugirieron que exista una sección con información sobre la web para estar seguros de que no se guardará su número de tarjeta de crédito. Así mismo, indicaron que les gustaría que al momento de entrar a la plataforma, sea más rápido y no colocar algún nombre de usuario o contraseña.
 
 ### Prototipo final
-Foto
+![](https://i.postimg.cc/htq1NtZS/prototipo-final.png)
+> Se hizo algunos pequeños cambios en las dos últimas pantallas, esto se puede visualizar en el código y en github-pages.
 
 ## 4. Objetivos de aprendizaje
 
