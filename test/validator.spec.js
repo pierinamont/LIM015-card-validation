@@ -37,9 +37,11 @@ describe('validator', () => {
       expect(validator.maskify(1)).toBe("1");
     });
 
-    it.skip('Debería retornar "######orld" para "helloworld"', () => {
-      // escribe aquí tu test
+    
+    it('Debería retornar "######orld" para "helloworld"', () => {
+      expect(validator.maskify("helloworld")).toBe("######orld");
     });
+    
   });
 
   describe('validator.getBrandCard', () => {

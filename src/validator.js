@@ -1,10 +1,12 @@
 const validator = {
   isValid: function (inputCard) {
     const reverseInput = inputCard.toString().split('').reverse().map(Number);
-    console.log(reverseInput); //
+    //console.log(reverseInput); 
+    
     // Alert para que no dejen el input vacío
     if (reverseInput.length === 0) {
       alert('No puedes dejar este campo vacío');
+      return 1;
     } 
     // Operación a las posiciones pares 
     let newArray = reverseInput.map((num, i) => {
@@ -22,13 +24,14 @@ const validator = {
         return num;
       }
     }); 
-    console.log(newArray);
+    //console.log(newArray);
+
     // Sumar todos los números del array
     newArray = newArray.reduce((previus, next) => {
       const sum = previus + next;
       return sum;
       }, 0);
-    console.log(newArray); //
+    //console.log(newArray); 
 
     if (newArray % 10 === 0) {
       return true;
@@ -39,10 +42,8 @@ const validator = {
 
   maskify: function (inputCard) {
     let value =  inputCard.toString();
-    console.log(value);
     // Números que estarán ocultos
     let replaceNums = value.slice(0, -4);
-    console.log(value);
     // Números que serán visibles
     let noReplaceNums = value.slice(-4);
     // Nuevo array que oculta los números
@@ -55,8 +56,8 @@ const validator = {
   },
 
   getBrandCard: function (inputCard) {
-    let value = inputCard.toString(); // no detecta el valor inputcard.value
-    let firstNum = value.slice(0);
+    let value = inputCard.toString(); 
+    let firstNum = value[0];
     let twoNum = value.slice(0, 2);
   
     if (firstNum == 4) {
