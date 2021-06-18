@@ -18,7 +18,7 @@ const dinersClub = document.getElementById('diners-club');
 const alertContainer = document.getElementsByClassName('alert-container');
 const valid = document.getElementsByClassName('valid');
 const noValid = document.getElementsByClassName('no-valid');
-const inputCard = document.getElementById('inputCard').value;
+//const inputCard = document.getElementById('inputCard').value;
 
 // BOTÓN PARA INICIAR
 function start() {
@@ -115,7 +115,6 @@ function displayCard() {
 }
 
 // PERMITIR SOLO NÚMEROS EN EL INPUT TEXT
-
 document.getElementById('inputCard').addEventListener('keypress', convert);
 function convert(e) {
   function justNumbers(k) {
@@ -171,11 +170,11 @@ document.getElementById('cardbtn').addEventListener('click', getNumber);
 function getNumber() {
 const inputCard = document.getElementById('inputCard').value;
 
+//document.getElementById('card-input').value = validator.isValid(inputCard);
   // Obtener input y colocarlo en reversa
   console.log(inputCard);
   const totalValidator = validator.isValid(inputCard);
   console.log(totalValidator);
-  //brandCard();
 
   // Botón de nueva validación 
   cardbtn.style.display = 'none';
@@ -205,17 +204,22 @@ const inputCard = document.getElementById('inputCard').value;
 
 }
 
+
 // MASKIFY
 document.getElementById('inputCard').addEventListener('keypress', maskify); 
 function maskify() {
+  const inputCard = document.getElementById('inputCard').value;
   // input text
   const finalValue = validator.maskify(inputCard); 
   console.log(finalValue); // no aparece nada 
-
+  //document.getElementById('inputCard').value = validator.maskify(inputCard); 
   // visualizar input text en la tarjeta 
+  
   document.getElementById('card-input').value = validator.maskify(inputCard); 
   document.getElementById('card-input').disabled = true; 
+  
 }
+
 
 
 // LIMPIAR EL INPUT 

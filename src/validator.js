@@ -38,19 +38,22 @@ const validator = {
   },
 
   maskify: function (inputCard) {
+    let value =  inputCard.toString();
+    console.log(value);
     // Números que estarán ocultos
-    let replaceNums = inputCard.slice(0, -4);
+    let replaceNums = value.slice(0, -4);
+    console.log(value);
     // Números que serán visibles
-    let noReplaceNums = inputCard.slice(-4);
+    let noReplaceNums = value.slice(-4);
     // Nuevo array que oculta los números
     let newArray = replaceNums.split('').map(function() {
       return '#';
     });
     newArray = newArray.join('');
     return newArray.concat(noReplaceNums);
+
   },
 
-  
   getBrandCard: function (inputCard) {
     let value = inputCard.toString(); // no detecta el valor inputcard.value
     let firstNum = value.slice(0);
@@ -66,9 +69,7 @@ const validator = {
     } else if(twoNum == 36) {
       return 'Diners Club Inter';
     }
-    
-
-  }
+  },
   
 }
 export default validator;
