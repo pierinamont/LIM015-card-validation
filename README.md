@@ -55,7 +55,7 @@ Fast Card va dirigido a personas de 20 a 38 años de edad que realizan compras o
 * [x] Uso de condicionales (if-else | switch | operador ternario)
 * [x] Uso de bucles (for | for..in | for..of | while)
 * [x] Uso de funciones (parámetros | argumentos | valor de retorno)
-* [ ] Declaración correcta de variables (const & let)
+* [x] Declaración correcta de variables (const & let)
 
 ### Testing
 
