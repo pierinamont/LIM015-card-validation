@@ -132,7 +132,7 @@ main {
     display: grid;
     margin: 0px;
     padding: 0px;
-    background-image: url('../images/bg.svg');
+    background-image: url('./images/bg.svg');
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain; 
@@ -297,7 +297,7 @@ footer li {
     width: 60px;
     height: auto;
     display: inline;
-    background-image: url(../images/visa.png);
+    background-image: url(./images/visa.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -307,7 +307,7 @@ footer li {
     width: 60px;
     height: auto;
     display: inline;
-    background-image: url(../images/mastercard.png);
+    background-image: url(./images/mastercard.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -317,7 +317,7 @@ footer li {
     width: 60px;
     height: auto;
     display: inline;
-    background-image: url(../images/american.png);
+    background-image: url(./images/american.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -327,7 +327,7 @@ footer li {
     width: 120px;
     height: auto;
     display: inline;
-    background-image: url(../images/Diners-Club.png);
+    background-image: url(./images/Diners-Club.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -338,7 +338,7 @@ footer li {
     font-size: 1.8rem;
 }
 .main-content span {
-    background-image: url(../images/chip-8.png);
+    background-image: url(./images/chip-8.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
