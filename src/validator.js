@@ -1,12 +1,12 @@
 const validator = {
   isValid: function (inputCard) {
     const reverseInput = inputCard.toString().split('').reverse().map(Number);
-    //console.log(reverseInput); 
+    console.log(reverseInput); 
     
     // Alert para que no dejen el input vacío
     if (reverseInput.length === 0) {
       alert('No puedes dejar este campo vacío');
-      return 1;
+      return 0;
     } 
     // Operación a las posiciones pares 
     let newArray = reverseInput.map((num, i) => {
