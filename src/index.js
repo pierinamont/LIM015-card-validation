@@ -135,7 +135,6 @@ function getNumber() {
 const inputCard = document.getElementById('inputCard').value;
   
   const totalValidator = validator.isValid(inputCard);
-  //console.log(totalValidator);
 
   // Botón de nueva validación 
   cardbtn.style.display = 'none';
